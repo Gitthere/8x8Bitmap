@@ -10,9 +10,17 @@ for (i = 0; i < changeHexInputToArray.length; i++) {
 
   //changes string 11000 to array [ '1', '1', '0', '0', '0' ]
   var binaryToIndividualElements = decimalToBinary.split("");
-  console.log(binaryToIndividualElements);
+  // console.log(binaryToIndividualElements);
+
+  //change "1" to "x"
+  for (k = 0; k < binaryToIndividualElements.length; k++) {
+    if (binaryToIndividualElements[k] > 0) {
+      binaryToIndividualElements.splice(k, 1, 'x');
+    };
+  };
+
   var numberOfZerosToConcat = 8 - decimalToBinary.length;
-  console.log(numberOfZerosToConcat);
+  // console.log(numberOfZerosToConcat);
 
   for (j = 0; j < numberOfZerosToConcat; j++) {
     binaryToIndividualElements.unshift('0');
