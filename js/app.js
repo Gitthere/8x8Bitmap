@@ -3,7 +3,8 @@ var button = document.getElementById("clickToConvertValues");
 
 button.onclick = function(e) {
   e.preventDefault();
-  //'trim' eliminates spaces in input
+  clearDisplayElements();
+  //'trim' eliminates spaces at end of input
   var changeHexInputToArray = hexInput.value.trim().split(" ");
     
   console.log(changeHexInputToArray);
@@ -33,6 +34,24 @@ button.onclick = function(e) {
       binaryToIndividualElements.unshift('0');
     };
     console.log(binaryToIndividualElements);
+
+    function displayElements(binaryToIndividualElements) {
+      var containerElement = document.getElementById('plottedOutput');
+      var createNewLine = document.createElement('div');
+      for (var i = 0; i < binaryToIndividualElements.length; i++) {
+        createNewLine.innerHTML=binaryToIndividualElements;
+        containerElement.appendChild(createNewLine);
+        console.log(i);
+      }
+    };
+
+    function clearDisplayElements() {
+      var containerElement = document.getElementById('plottedOutput');
+      containerElement.innerHTML = '';
+    }
+
+    displayElements(binaryToIndividualElements);
+
   };
 }
 
