@@ -39,6 +39,7 @@ button.onclick = function(e) {
       var containerElement = document.getElementById('plottedOutput');
       var createNewLine = document.createElement('div');
       for (var i = 0; i < binaryToIndividualElements.length; i++) {
+        //adds values to 'new lines'
         createNewLine.innerHTML=binaryToIndividualElements;
         containerElement.appendChild(createNewLine);
         console.log(i);
@@ -80,7 +81,8 @@ button.onclick = function(e) {
 //       // console.log(outputPaddedValue);
 
 //       //"g" means global and will replace for all values, not just first one
-//       outputPaddedValue = outputPaddedValue.replace("1", "X", "g").replace("0", " ", "g" );
+         //******** only replaces first '1', need to debug *********
+//       outputPaddedValue = outputPaddedValue.replace(/1/g, "X").replace(/0/g, " ");
 
 //       outputArray.push(outputPaddedValue);
 //     };
